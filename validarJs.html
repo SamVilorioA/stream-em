@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Validar con JS!</title>
+	<script src="validateForm.js"></script>
+</head>
+<body>
+<style>
+	.error{
+		border: solid 2px red;
+	}
+</style>
+	<a href="index.html">Atras</a>
+	<br><br>
+	<form id="formu">
+		<label for="username">Nombre:</label>
+		<input type="text" id="username" name="username" autofocus placeholder="Introduzca su nombre"><br>
+		<label for="address">Direccion:</label>
+		<input type="text" id="address" name="address" placeholder="Introduzca su direccion"><br>
+		<label for="phone">Telefono:</label>
+		<input type="text" id="phone" name="phone" placeholder="Introduzca su telefono"><br>
+		<label for="identification">No. Identificacion:</label>
+		<input type="text" id="identification" name="identification" placeholder="Introduzca su identificacion" ><br>
+		<input type="button" name="insert" value="Registrar" onclick="validateForm()">
+	</form>
+</body>
+</html>

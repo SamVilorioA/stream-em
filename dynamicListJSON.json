@@ -1,0 +1,57 @@
+{
+	"Mantenimiento":[
+		{"Mostrar":"index.html","Usuarios":"index.html","Cuentas":"index.html"}
+	],
+	"Reportes/Informes":[
+		{"Mostrar":"index.html","Estado general":"index.html","Ganancias":"index.html"}
+	],
+	"Procesos":[
+		{"Mostrar":"index.html"},
+		{"Proceso 1":
+			[
+				{"Proceso 1.1":"proceso1_1.html","Proceso 1.2":"proceso1_2.html"}
+			],
+		"Proceso 2":"proceso2.html"
+		
+		}]
+},
+{
+	"1":[{"father":"Mantenimiento","child":[
+											{"name":"Mostrar","Url":"/index.html"},
+											{"name":"Usuarios","Url":"/index.html"},
+											{"name":"Cuentas","Url":"/index.html"},
+											{"name":"Otros","Url":"/index.html"}
+											]
+		}],
+	"2":[{"father":"Reportes","child":[
+										{"name":"Mostrar","Url":"/index.html"},
+										{"name":"Estado general","Url":"/index.html"},
+										{"name":"Ganancia","Url":"/index.html"},
+										{"name":"Perdidas","Url":"/index.html"}
+									  ]
+		}],
+	"3":[{"father":"Procesos","child":[
+										{"name":"Mostrar","Url":"/index.html"},
+										{"name":"Proceso 1","Url":"/index"},
+										{"name":"Proceso 2","child":[{"name":"Mostrar","Url":"/index.html"},
+																	 {"name":"Proceso 2.1","Url":"/index.html"},
+																	 {"name":"Proceso 2.2","Url":"/index.html"}
+																	]},
+										{"name":"Proceso 3","Url":"/index.html"}
+									  ]
+		}]
+},
+{
+	"1":[{"Father":"none","Name":"Mantenimiento","Url":"mantenimiento/index.html","id":"mantenimiento1","hasChild":true}],
+	"2":[{"FatherId":"none","Name":"Reporte","Url":"reportes/index.html","id":"report1","hasChild":true}],
+	"3":[{"FatherId":"none","Name":"Proceso","Url":"proceso/index.html","id":"proceso1","hasChild":true}],
+	"4":[{"FatherId":"none","Name":"Otro","Url":"otro/index.html","id":"otro1","hasChild":true}],
+	"5":[{"FatherId":"mantenimiento1","Name":"Usuarios","Url":"usuarios/index.html","id":"usuarios1","hasChild":false}],
+	"6":[{"FatherId":"mantenimiento1","Name":"Cuentas","Url":"cuentas/index.html","id":"cuentas1","hasChild":false}],
+	"7":[{"FatherId":"report1","Name":"Estado General","Url":"estado general/index.html","id":"estadog1","hasChild":false}],
+	"8":[{"FatherId":"report1","Name":"Ganancias","Url":"ganancias/index.html","id":"ganancias1","hasChild":false}],
+	"9":[{"FatherId":"report1","Name":"Perdidas","Url":"perdidas/index.html","id":"perdidas1","hasChild":false}],
+	"10":[{"FatherId":"proceso1","Name":"Proceso 1","Url":"proceso/proceso1/index.html","id":"proceso1_1","hasChild":true}],
+	"11":[{"FatherId":"proceso1_1","Name":"Proceso 1.1","Url":"proceso/proceso1_1/index.html","id":"proceso1_1_1","hasChild":false}],
+	"12":[{"FatherId":"proceso1","Name":"Proceso 2","Url":"proceso/proceso1_2/index.html","id":"proceso1_1_2","hasChild":false}],
+}

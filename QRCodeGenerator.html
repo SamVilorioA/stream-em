@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Generador de codigo QR</title>
+    <script src="qrcode.js"	></script>
+    <script src="vcard.js"></script>
+    <script src="generate.js"></script>
+</head>
+<body>
+    <a href="index.html">Atras</a>
+	<center><h2>Generador de codigo QR v1.0</h2></center>
+    <form>
+        <input type="text" id="firstName" placeholder="Nombre(s)"><br>
+        <input type="text" id="lastName" placeholder="Apellido(s)"><br>
+        <input type="text" id="email" placeholder="Correo electronico"><br>
+        <input type="text" id="cellphone" placeholder="Telefono Celular" max="11"><br>
+        <input type="text" id="address" placeholder="Direccion"><br>
+        <input type="button" name="generate" value="Generar" onclick="generateVCard()"><br>
+    </form>
+    <br><br>
+    <div id="generatedVCard"></div>
+    <div id="GeneratedQRCode"></div>
+    <script type="text/javascript">        
+    </script>
+</body>
+</html> 

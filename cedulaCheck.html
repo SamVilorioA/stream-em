@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cedula Checker</title>
+    <meta charset="utf-8">
+</head>
+<body>
+	<a href="index.html">Atras</a>
+	<center><h2>Verificacion de cedula</h2></center>
+<input type="text" id="ced" placeholder="Ingrese cedula">
+<input type="button" name="check" value="Verificar" onclick="cal()"> <br><br>
+<table>
+	<tr>
+		<th>-</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th>
+	</tr>
+	<tr class="even">
+		<th>Cedula original</th>
+		<td id="ced_Or1"></td><td id="ced_Or2"></td><td id="ced_Or3"></td><td id="ced_Or4"></td>
+		<td id="ced_Or5"></td><td id="ced_Or6"></td><td id="ced_Or7"></td><td id="ced_Or8"></td>
+		<td id="ced_Or9"></td><td id="ced_Or10"></td><td id="ced_Or11"></td>		
+	</tr>
+	<tr>
+		<th>Multiplos</th><th>1</th><th>2</th><th>1</th><th>2</th><th>1</th><th>2</th><th>1</th><th>2</th><th>1</th><th>2</th><th>-</th>
+	</tr>
+	<tr class="even">
+		<th>Digitos</th>
+		<td id="dig1"></td><td id="dig2"></td><td id="dig3"></td><td id="dig4"></td>
+		<td id="dig5"></td><td id="dig6"></td><td id="dig7"></td><td id="dig8"></td>
+		<td id="dig9"></td><td id="dig10"></td><td id="dig11"></td>
+
+	</tr>
+	<tr>		
+		<th>Total</th><td id="acum"></td>
+	</tr>
+	<tr class="even">
+		<th>Residuo</th>
+		<td id="mod"></td>
+	</tr>
+	<tr>
+		<th>Resultado</th>
+		<td id="result"></td>
+	</tr>
+</table>
+</body>
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 10px;
+  }
+  #ced_Or1,#ced_Or2,#ced_Or3,#ced_Or4,#ced_Or5,#ced_Or6,#ced_Or7,#ced_Or8,#ced_Or9,#ced_Or10,#ced_Or11  {
+  	background:#cccccc;
+  }
+</style>
+<script type="text/javascript">
+	function cal()
+	{	
+		var acum = 0;
+		var rs,mod;	
+		var texto = document.getElementById("ced").value;
+		if(texto.length != 11)
+			alert("Cedula incorrecta, intente nuevamente."+texto.length);
+		else
+		{
+			//alert(texto.length);
+			for (var i = 0; i < texto.length; i++)
+			{
+				if (isNaN(texto[i]))
+				{
+					alert("Introdujo un caracter invalido!");
+					break;
+				}
+				else
+				{
+					if ( i <= 9)
+					{
+						rs = (i+1)%2==0 ? parseInt(texto[i])*2 : parseInt(texto[i]);
+						acum += rs > 9 ? (rs - 9) : rs;
+					}
+					document.getElementById("ced_Or"+(i+1)).innerHTML = texto[i];
+					document.getElementById("dig"+(i+1)).innerHTML = ((i+1)%2==0) ? parseInt(texto[i])*2 : parseInt(texto[i]);
+				}
+			}
+			document.getElementById("acum").innerHTML = acum;
+			mod = 10 - (acum%10);
+			document.getElementById("mod").innerHTML = mod;
+			/*if (document.getElementById("ced_Or11").value == acum % 10)
+			{
+				document.getElementById("mod").style.color = green;
+			}*/
+			document.getElementById("mod").style.background = parseInt(texto[10]) == mod ? "#33ff33": "red";
+		}
+	}
+</script>
+</html>
